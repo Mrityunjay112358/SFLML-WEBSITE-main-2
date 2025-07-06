@@ -67,7 +67,7 @@ const teamMembers = {
     {
       name: 'Dhruv Punjabi',
       role: 'Head of Logistics',
-      image: '/public/punj.jpeg',
+      image: 'public/punj.jpeg',
     },
     {
       name: 'Ariana Agarwal',
