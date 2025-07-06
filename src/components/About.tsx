@@ -6,7 +6,7 @@ import { BookOpen, Star, Sparkles, Database, Lock, Network, Cpu, Eye, Shield, Co
 
 const About: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [setMousePosition] = useState({ x: 0, y: 0 });
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -16,7 +16,6 @@ const About: React.FC = () => {
   const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 };
   const y1 = useSpring(useTransform(scrollYProgress, [0, 1], [0, -200]), springConfig);
   const y2 = useSpring(useTransform(scrollYProgress, [0, 1], [0, -400]), springConfig);
-  const rotate = useSpring(useTransform(scrollYProgress, [0, 1], [0, 360]), springConfig);
   const scale = useSpring(useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 1.2]), springConfig);
 
   const [problemRef, problemInView] = useInView({ 
