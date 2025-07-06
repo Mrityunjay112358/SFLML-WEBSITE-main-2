@@ -24,7 +24,7 @@ const CustomCursor: React.FC = () => {
       }}
     >
       <motion.img 
-        src="/whitelogo.png" 
+        src="public/whitelogo.png" 
         alt="Custom Cursor" 
         className="w-full h-full filter brightness-110 drop-shadow-lg"
         style={{
