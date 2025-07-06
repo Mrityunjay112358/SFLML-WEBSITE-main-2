@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
               >
                 <div className="relative">
                   <img 
-                    src="/whitelogo.png" 
+                    src="public/whitelogo.png" 
                     alt="SFLML Logo" 
                     className="h-12 w-auto filter brightness-110"
                   />
