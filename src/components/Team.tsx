@@ -98,12 +98,12 @@ const teamMembers = {
     {
       name: 'Ryna Gattani',
       role: 'Storyteller',
-      image: '/public/ryna.jpeg',
+      image: 'public/ryna.jpeg',
     },
     {
       name: 'Ira Malpani',
       role: 'Storyteller',
-      image: '/public/ira.jpeg',
+      image: 'public/ira.jpeg',
     },
     {
       name: 'Dhruvika Singh',
