@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const Work: React.FC = () => {
-  const [headerRef, headerInView] = useInView({ threshold: 0.3, triggerOnce: true });
   const [achievementsRef, achievementsInView] = useInView({ threshold: 0.2, triggerOnce: true });
   const [ekalRef, ekalInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [studentNgoRef, studentNgoInView] = useInView({ threshold: 0.1, triggerOnce: true });
