@@ -8,7 +8,6 @@ const Work: React.FC = () => {
   const [ekalRef, ekalInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [studentNgoRef, studentNgoInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [galleryRef, galleryInView] = useInView({ threshold: 0.1, triggerOnce: true });
-  const [fundraiserRef, fundraiserInView] = useInView({ threshold: 0.2, triggerOnce: true });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
@@ -110,19 +109,7 @@ const Work: React.FC = () => {
     { name: 'Individual Contributors', founder: 'Kiara Gwala, Yashasvi Jain, Gauri Maheshwari, Mayank Sacher' }
   ];
 
-  const fundraiserData = {
-    current: 125000000,
-    target: 300000000,
-    percentage: 41.67,
-    milestones: [
-      { amount: 50000000, label: '50L - Digital Infrastructure', achieved: true },
-      { amount: 100000000, label: '1Cr - Teacher Training', achieved: true },
-      { amount: 150000000, label: '1.5Cr - Learning Materials', achieved: false },
-      { amount: 200000000, label: '2Cr - Technology Integration', achieved: false },
-      { amount: 250000000, label: '2.5Cr - Community Centers', achieved: false },
-      { amount: 300000000, label: '3Cr - Full Implementation', achieved: false }
-    ]
-  };
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -148,14 +135,6 @@ const Work: React.FC = () => {
     }
   };
 
-  const formatCurrency = (amount: number) => {
-    if (amount >= 10000000) {
-      return `₹${(amount / 10000000).toFixed(1)}Cr`;
-    } else if (amount >= 100000) {
-      return `₹${(amount / 100000).toFixed(1)}L`;
-    }
-    return `₹${amount.toLocaleString()}`;
-  };
 
   return (
     <>
