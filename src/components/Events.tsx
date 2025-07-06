@@ -5,7 +5,6 @@ import { Palette, Handshake, Lightbulb, TrendingUp } from 'lucide-react';
 
 const Events: React.FC = () => {
   const [headerRef, headerInView] = useInView({ threshold: 0.3, triggerOnce: true });
-  const [mainEventRef, mainEventInView] = useInView({ threshold: 0.2, triggerOnce: true });
   const [divisionsRef, divisionsInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
