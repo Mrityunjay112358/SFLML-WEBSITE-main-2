@@ -251,7 +251,7 @@ const Work: React.FC = () => {
           {/* India Impact Map */}
           <div className="flex justify-center mb-12">
             <img
-              src="/impact-india.png"
+              src="public/impact-india.png"
               alt="Impact in India"
               className="w-full max-w-2xl rounded-3xl shadow-2xl border-4 border-blue-900/40 bg-white/10"
               style={{
