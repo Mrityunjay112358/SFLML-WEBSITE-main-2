@@ -107,7 +107,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
               >
                 <div className="relative cursor-none">
                   <img 
-                    src="/whitelogo.png" 
+                    src="public/whitelogo.png" 
                     alt="SFLML Logo" 
                     className="h-14 w-auto filter brightness-110 cursor-none"
                     style={{ transform: 'translateZ(0)', willChange: 'transform' }}
