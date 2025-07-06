@@ -382,7 +382,7 @@ const Hero: React.FC = () => {
                   }}
                 >
                   <img 
-                    src="/whitelogo.png" 
+                    src="public/whitelogo.png" 
                     alt="SFLML Logo" 
                     className="filter brightness-110 drop-shadow-2xl"
                     style={{ 
@@ -590,7 +590,7 @@ const Hero: React.FC = () => {
                     }}
                   >
                     <img 
-                      src="/whitelogo.png" 
+                      src="public/whitelogo.png" 
                       alt="SFLML Logo" 
                       className="h-52 w-auto filter brightness-110 opacity-95 drop-shadow-2xl"
                       style={{ transform: 'translateZ(0)', willChange: 'transform' }}
