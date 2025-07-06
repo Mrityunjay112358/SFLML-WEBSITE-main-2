@@ -91,7 +91,7 @@ const teamMembers = {
     {
       name: 'Vandana Choudhary',
       role: 'Head Of Synchronisation',
-      image: '/public/vandana.png',
+      image: 'public/vandana.png',
     }
   ],
   storytellers: [
