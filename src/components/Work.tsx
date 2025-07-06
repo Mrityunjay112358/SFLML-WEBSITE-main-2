@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Users, Globe, Award, School, Heart, Calendar, MapPin, TrendingUp } from 'lucide-react';
+import { BookOpen, Users, Globe, Award, School, Heart, Calendar, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
