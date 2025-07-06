@@ -173,7 +173,7 @@ const Team: React.FC = () => {
           members.length === 2 ? 'justify-center' : 
           'justify-center'
         }`}>
-          {members.map((member, idx) => (
+          {members.map((member) => (
             <motion.div
               key={member.name}
               className="flex flex-col items-center gap-6 group"
