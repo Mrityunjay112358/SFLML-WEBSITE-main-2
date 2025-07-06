@@ -84,7 +84,7 @@ const teamMembers = {
     {
       name: 'Arjun Patel',
       role: 'Head of Event Day',
-      image: '/public/arjun.jpeg',
+      image: 'public/arjun.jpeg',
     }
   ],
   synchronisation: [
