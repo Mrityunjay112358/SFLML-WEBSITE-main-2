@@ -19,7 +19,7 @@ const teamMembers = {
     {
       name: 'Shresht Mangal',
       role: 'Co-curator',
-      image: '/public/mangal.jpeg',
+      image: 'public/mangal.jpeg',
     }
   ],
   finance: [
