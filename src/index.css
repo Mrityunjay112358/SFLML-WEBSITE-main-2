@@ -1,0 +1,645 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    /* Mobile touch optimization */
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* FORCE HIDE CURSOR GLOBALLY */
+    cursor: none !important;
+  }
+  
+  body {
+    font-family: 'League Spartan', 'Inter', system-ui, sans-serif;
+    font-weight: 450;
+    line-height: 1.6;
+    background: #00053F;
+    color: #f8fafc;
+    overflow-x: hidden;
+    cursor: none !important;
+    font-size: 22px;
+    /* Mobile touch optimization */
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ENHANCED CURSOR HIDING - Force hide all cursors everywhere */
+  html, body {
+    cursor: none !important;
+  }
+
+  /* Custom cursor styles - Hide all cursors EVERYWHERE */
+  .cursor-none {
+    cursor: none !important;
+  }
+
+  .cursor-none * {
+    cursor: none !important;
+  }
+
+  /* Override any specific cursor styles with !important */
+  button, a, input, textarea, select, div, span, p, h1, h2, h3, h4, h5, h6, 
+  nav, main, section, article, aside, header, footer, ul, li, img, video {
+    cursor: none !important;
+  }
+
+  /* Ensure no cursor appears anywhere with maximum specificity */
+  *, *:before, *:after, *:hover, *:focus, *:active {
+    cursor: none !important;
+  }
+
+  /* Force override any framework or library cursor styles */
+  [class*="cursor"], [style*="cursor"] {
+    cursor: none !important;
+  }
+
+  /* GLOBAL CURSOR HIDING - Apply to all interactive elements */
+  button:hover, a:hover, input:hover, textarea:hover, select:hover,
+  .hover\:cursor-pointer:hover, .cursor-pointer {
+    cursor: none !important;
+  }
+
+  /* Override Framer Motion and other animation library cursors */
+  [data-framer-component], [data-motion-component] {
+    cursor: none !important;
+  }
+
+  /* Override any CSS framework cursor utilities */
+  .cursor-auto, .cursor-default, .cursor-pointer, .cursor-wait, 
+  .cursor-text, .cursor-move, .cursor-help, .cursor-not-allowed,
+  .cursor-grab, .cursor-grabbing {
+    cursor: none !important;
+  }
+}
+
+@layer components {
+  .glass {
+    backdrop-filter: blur(24px);
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 5, 63, 0.3);
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform, backdrop-filter;
+  }
+  
+  .glass-light {
+    backdrop-filter: blur(24px);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 5, 63, 0.2);
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform, backdrop-filter;
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #3b82f6, #1e40af, #00053F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  .gradient-primary {
+    background: linear-gradient(135deg, #00053F, #1e293b, #000000);
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  .section-padding {
+    @apply px-6 sm:px-8 lg:px-12 py-16 lg:py-24;
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  .hover-lift {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-20px) scale(1.02) translateZ(0);
+    box-shadow: 0 50px 100px -12px rgba(0, 5, 63, 0.4);
+  }
+  
+  .text-shadow {
+    text-shadow: 0 4px 12px rgba(0, 5, 63, 0.6);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 8px 24px rgba(0, 5, 63, 0.8);
+  }
+
+  .particle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: rgba(0, 5, 63, 0.6);
+    border-radius: 50%;
+    animation: particle 30s linear infinite;
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
+
+  .particle:nth-child(2n) {
+    background: rgba(59, 130, 246, 0.4);
+    animation-delay: -10s;
+    animation-duration: 35s;
+  }
+
+  .particle:nth-child(3n) {
+    background: rgba(30, 64, 175, 0.3);
+    animation-delay: -20s;
+    animation-duration: 40s;
+  }
+
+  .floating-element {
+    position: relative;
+    border-radius: 50%;
+    background: linear-gradient(45deg, rgba(0, 5, 63, 0.2), rgba(30, 41, 59, 0.1));
+    animation: float 15s ease-in-out infinite;
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .floating-element:nth-child(2) {
+    animation-delay: -5s;
+    animation-duration: 18s;
+  }
+
+  .floating-element:nth-child(3) {
+    animation-delay: -10s;
+    animation-duration: 22s;
+  }
+
+  /* Enhanced Parallax Background - OPTIMIZED FOR SMOOTH SCROLLING */
+  .parallax-bg {
+    will-change: transform;
+    transform: translateZ(0);
+    transition: none; /* Remove transition for smoother scrolling */
+  }
+
+  .floating-parallax {
+    will-change: transform;
+    transform: translateZ(0);
+    transition: none; /* Remove transition for smoother scrolling */
+  }
+
+  /* Custom cursor trail particles */
+  .cursor-trail {
+    position: absolute;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
+
+  .btn-text {
+    @apply text-xl lg:text-2xl font-medium;
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /* Card text */
+  .card-title {
+    @apply text-3xl lg:text-4xl xl:text-5xl font-semibold;
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  .card-text {
+    @apply text-xl lg:text-2xl;
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /* Small text */
+  .text-small {
+    @apply text-lg lg:text-xl;
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  .text-xs-custom {
+    @apply text-base lg:text-lg;
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
+@layer utilities {
+  /* CINEMATIC SCROLL ANIMATIONS - Enhanced for About Section */
+  
+  /* Main entrance animation with enhanced easing */
+  .cinematic-entrance {
+    opacity: 0;
+    transform: translateY(100px) scale(0.95) rotateX(10deg) translateZ(0);
+    filter: blur(10px);
+    transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity, filter;
+  }
+  
+  .cinematic-entrance.in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg) translateZ(0);
+    filter: blur(0px);
+  }
+  
+  /* Staggered child animations */
+  .stagger-child-1 {
+    opacity: 0;
+    transform: translateY(60px) translateZ(0);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0.1s;
+    will-change: transform, opacity;
+  }
+  
+  .stagger-child-2 {
+    opacity: 0;
+    transform: translateY(60px) translateZ(0);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0.3s;
+    will-change: transform, opacity;
+  }
+  
+  .stagger-child-3 {
+    opacity: 0;
+    transform: translateY(60px) translateZ(0);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0.5s;
+    will-change: transform, opacity;
+  }
+  
+  .stagger-child-4 {
+    opacity: 0;
+    transform: translateY(60px) translateZ(0);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0.7s;
+    will-change: transform, opacity;
+  }
+  
+  .stagger-child-1.in-view,
+  .stagger-child-2.in-view,
+  .stagger-child-3.in-view,
+  .stagger-child-4.in-view {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
+  
+  /* Card entrance animations with 3D effects */
+  .card-entrance {
+    opacity: 0;
+    transform: translateY(80px) rotateX(45deg) scale(0.8) translateZ(0);
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity;
+  }
+  
+  .card-entrance.in-view {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg) scale(1) translateZ(0);
+  }
+  
+  /* Enhanced slide animations with depth */
+  .slide-up-depth {
+    opacity: 0;
+    transform: translateY(120px) scale(0.9) translateZ(0);
+    filter: blur(5px);
+    transition: all 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity, filter;
+  }
+
+  .slide-up-depth.in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1) translateZ(0);
+    filter: blur(0px);
+  }
+
+  .slide-left-depth {
+    opacity: 0;
+    transform: translateX(-120px) rotateY(-15deg) translateZ(0);
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity;
+  }
+
+  .slide-left-depth.in-view {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg) translateZ(0);
+  }
+
+  .slide-right-depth {
+    opacity: 0;
+    transform: translateX(120px) rotateY(15deg) translateZ(0);
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity;
+  }
+
+  .slide-right-depth.in-view {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg) translateZ(0);
+  }
+
+  /* Enhanced scale animations with rotation */
+  .scale-rotate-in {
+    opacity: 0;
+    transform: scale(0.6) rotate(-15deg) translateZ(0);
+    transition: all 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity;
+  }
+
+  .scale-rotate-in.in-view {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translateZ(0);
+  }
+
+  /* Text reveal with typewriter effect */
+  .text-reveal-typewriter {
+    overflow: hidden;
+    border-right: 2px solid rgba(189, 196, 212, 0.7);
+    white-space: nowrap;
+    animation: typewriter 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  /* Floating animation with enhanced physics */
+  .float-enhanced {
+    animation: float-enhanced 6s ease-in-out infinite;
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .float-enhanced:nth-child(2n) {
+    animation-delay: -2s;
+    animation-duration: 8s;
+  }
+
+  .float-enhanced:nth-child(3n) {
+    animation-delay: -4s;
+    animation-duration: 10s;
+  }
+
+  /* OPTIMIZED keyframes for smooth performance */
+  @keyframes particle {
+    0% { transform: translateY(100vh) rotate(0deg) translateZ(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg) translateZ(0); opacity: 0; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg) translateZ(0); }
+    33% { transform: translateY(-30px) rotate(120deg) translateZ(0); }
+    66% { transform: translateY(-15px) rotate(240deg) translateZ(0); }
+  }
+
+  @keyframes float-enhanced {
+    0%, 100% { transform: translateY(0px) rotate(0deg) scale(1) translateZ(0); }
+    25% { transform: translateY(-20px) rotate(90deg) scale(1.05) translateZ(0); }
+    50% { transform: translateY(-40px) rotate(180deg) scale(1) translateZ(0); }
+    75% { transform: translateY(-20px) rotate(270deg) scale(0.95) translateZ(0); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(0, 5, 63, 0.4); }
+    50% { box-shadow: 0 0 60px rgba(0, 5, 63, 0.8); }
+  }
+
+  @keyframes wave {
+    0% { transform: translateX(-100%) translateZ(0); }
+    100% { transform: translateX(100%) translateZ(0); }
+  }
+
+  @keyframes breathe {
+    0%, 100% { transform: scale(1) translateZ(0); }
+    50% { transform: scale(1.05) translateZ(0); }
+  }
+
+  @keyframes ripple {
+    0% { width: 0; height: 0; opacity: 1; }
+    100% { width: 300px; height: 300px; opacity: 0; }
+  }
+
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: rgba(189, 196, 212, 0.7); }
+  }
+
+  /* NEW ADVANCED ANIMATION KEYFRAMES */
+  
+  @keyframes flowing-light {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  @keyframes border-flow {
+    0% { background-position: -200% 0%; }
+    100% { background-position: 200% 0%; }
+  }
+  
+  @keyframes ethereal-glow {
+    0%, 100% { 
+      opacity: 0.3;
+      transform: scale(1) rotate(0deg);
+    }
+    50% { 
+      opacity: 0.7;
+      transform: scale(1.1) rotate(180deg);
+    }
+  }
+  
+  @keyframes mystical-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(189, 196, 212, 0.3);
+      filter: blur(0px);
+    }
+    50% { 
+      box-shadow: 0 0 40px rgba(189, 196, 212, 0.6);
+      filter: blur(2px);
+    }
+  }
+
+  /* Animation utilities with hardware acceleration */
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+    transform: translateZ(0);
+    will-change: box-shadow;
+  }
+
+  .animate-wave {
+    animation: wave 2s ease-in-out infinite;
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .animate-breathe {
+    animation: breathe 4s ease-in-out infinite;
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .animate-flowing-light {
+    animation: flowing-light 4s linear infinite;
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  .animate-border-flow {
+    animation: border-flow 3s linear infinite;
+    transform: translateZ(0);
+    will-change: background-position;
+  }
+  
+  .animate-ethereal-glow {
+    animation: ethereal-glow 6s ease-in-out infinite;
+    transform: translateZ(0);
+    will-change: opacity, transform;
+  }
+  
+  .animate-mystical-pulse {
+    animation: mystical-pulse 4s ease-in-out infinite;
+    transform: translateZ(0);
+    will-change: box-shadow, filter;
+  }
+
+  .animate-float-enhanced {
+    animation: float-enhanced 6s ease-in-out infinite;
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .animate-ripple {
+    animation: ripple 2s ease-out infinite;
+    transform: translateZ(0);
+    will-change: width, height, opacity;
+  }
+
+  /* Scroll-triggered reveal masks with hardware acceleration */
+  .reveal-mask {
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .reveal-mask::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    transform: translateX(-100%) translateZ(0);
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .reveal-mask.in-view::after {
+    transform: translateX(100%) translateZ(0);
+  }
+
+  /* SMOOTH SCROLLING OPTIMIZATIONS */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    transform: translateZ(0);
+    will-change: scroll-position;
+  }
+
+  /* MOBILE TOUCH OPTIMIZATIONS */
+  .touch-optimized {
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* CTA Button Enhancements */
+  .cta-enhanced {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
+  }
+
+  .cta-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+    pointer-events: none;
+  }
+
+  .cta-enhanced:hover::before {
+    left: 100%;
+  }
+
+  .cta-enhanced:hover {
+    transform: translateY(-3px) scale(1.02) translateZ(0);
+    box-shadow: 0 15px 40px rgba(189, 196, 212, 0.4);
+  }
+}
+
+/* --- FORCE HIDE CURSOR EVERYWHERE (added for extra safety) --- */
+html, body, #root, .App, * {
+  cursor: none !important;
+}
+*, *:hover, *:active, *:focus {
+  cursor: none !important;
+}
+
+/* Extra: Hide cursor on all focus and active states (workaround for overlays) */
+*:focus, *:active {
+  cursor: none !important;
+}
+
+/* FINAL CATCH-ALL: Hide native cursor on every element and pseudo-element */
+*, *::before, *::after {
+  cursor: none !important;
+}
+
+/* Blanket-ban the native cursor absolutely everywhere */
+html, body, body * {
+  cursor: none !important;
+}
